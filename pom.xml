@@ -41,6 +41,13 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.jboss.arquillian.selenium</groupId>
+                <artifactId>selenium-bom</artifactId>
+                <version>2.29.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <!-- JBoss distributes a complete set of Java EE 6 APIs including 
                 a Bill of Materials (BOM). A BOM specifies the versions of a "stack" (or 
                 a collection) of artifacts. We use this here so that we always get the correct 
@@ -71,6 +78,7 @@
 
         <!-- First declare the APIs we depend on and need for compilation. 
             All of them are provided by JBoss AS 7 -->
+
             
             <dependency>
                 <groupId>org.jboss.arquillian.graphene</groupId>
@@ -80,13 +88,6 @@
                 <scope>test</scope>
             </dependency>
 
-            <dependency>
-                <groupId>org.jboss.arquillian.extension</groupId>
-                <artifactId>arquillian-warp</artifactId>
-                <version>1.0.0.Alpha2</version>
-                <type>pom</type>
-                <scope>test</scope>
-            </dependency>
             
             <dependency>
                 <groupId>org.jboss.arquillian.extension</groupId>

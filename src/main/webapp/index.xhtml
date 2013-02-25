@@ -10,13 +10,13 @@
       <div>
          <p>You have successfully deployed a Java EE 6 web application.</p>
          <h3>Your application can run on:</h3>
-         <img src="resources/gfx/dualbrand_as7eap.png"/>
       </div>
 
       <h:form id="reg">
          <h2>Member Registration</h2>
          <p>Enforces annotation-based constraints defined on the model class.</p>
-         <h:panelGrid columns="3" columnClasses="titleCell">
+         
+                  <h:panelGrid columns="3" columnClasses="titleCell">
             <h:outputLabel for="name" value="Name:"/>
             <h:inputText id="name" value="#{newMember.name}" />
             <h:message for="name" errorClass="invalid"/>
@@ -29,10 +29,17 @@
             <h:inputText id="phoneNumber" value="#{newMember.phoneNumber}"/>
             <h:message for="phoneNumber" errorClass="invalid"/>
          </h:panelGrid>
+         
+         
+         <h:panelGroup id="magic">
+            
+         </h:panelGroup>
+         
+      
 
          <p>
             <h:panelGrid columns="2">
-               <h:commandButton id="register" action="#{memberController.register}" value="Register" styleClass="register"/>
+                <h:commandButton id="register" action="#{memberController.register}" value="Register" styleClass="register"/>
                <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
                            globalOnly="true"/>
             </h:panelGrid>
@@ -51,14 +58,7 @@
             <f:facet name="header">Name</f:facet>
                 #{_member.name}
             </h:column>
-         <h:column>
-            <f:facet name="header">Email</f:facet>
-                #{_member.email}
-            </h:column>
-         <h:column>
-            <f:facet name="header">Phone #</f:facet>
-                #{_member.phoneNumber}
-            </h:column>
+         
          <h:column>
             <f:facet name="header">REST URL</f:facet>
             <a href="#{request.contextPath}/rest/members/#{_member.id}">/rest/members/#{_member.id}</a>
